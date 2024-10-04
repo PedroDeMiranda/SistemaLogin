@@ -6,18 +6,17 @@
 
 <%@page import="SistemaLogin.Usuario"%>
 <%
-    String vEmail =  request.getParameter("email");
-    String vSenha =  request.getParameter("senha");
+    String email =  request.getParameter("email");
+    String senha =  request.getParameter("senha");
     
     Usuario usu = new Usuario();
-    usu.setEmail(vEmail);
-    usu.setSenha(vSenha);
+    usu.setEmail(email);
+    usu.setSenha(senha);
     
     usu = usu.autenticarUsuario();
     if (usu != null){
-    
         // criar uma sessão para o uusário que está autenticado
-        session.setAttribute("usuario", vEmail);
+        session.setAttribute("usuario", email);
         response.sendRedirect("menu.jsp");
     } else {
         response.sendRedirect("usuarioNaoCadastrado.html");

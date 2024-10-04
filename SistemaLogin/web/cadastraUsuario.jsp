@@ -16,6 +16,4 @@
     if (usu.incluirUsuario()){       
         response.sendRedirect("index.html");
     }
-
-
 %>
